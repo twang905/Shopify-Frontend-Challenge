@@ -7,7 +7,7 @@ export default function MovieCard(props) {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    fetch(`http://www.omdbapi.com/?apikey=9b7cb146&t=${props.title}`)
+    fetch(`https://www.omdbapi.com/?apikey=9b7cb146&t=${props.title}`)
       .then(res => res.json())
       .then(
         (result) => {

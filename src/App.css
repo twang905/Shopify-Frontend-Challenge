@@ -50,18 +50,13 @@ input {
   background-color: transparent;
 }
 
-@font-face{
-  font-family: "sf-pro";
-  src: local("SFProDisplay-Bold"), url(./assets/SFProDisplay-Bold.ttf) format('openType');
-}
-
 @font-face {
-  font-family: Proxima Nova;
+  font-family: 'Proxima Nova';
   font-weight: 400;
-  src: url(./assets/proxima-nova-regular.otf) format("openType");
+  src: url(./fonts/proxima-nova-regular.otf) format("openType");
 }
 @font-face {
-  font-family: Proxima Nova;
+  font-family: 'Proxima Nova';
   font-weight: 500;
-  src: url(./assets/proxima-nova-bold.otf) format("openType");
+  src: url(./fonts/proxima-nova-bold.otf) format("openType");
 }

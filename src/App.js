@@ -16,7 +16,7 @@ function App() {
 
   const handleChange = (e) => {
     setQuery(e.target.value);
-    fetch(`http://www.omdbapi.com/?apikey=9b7cb146&type=movie&plot=full&s=${query}`)
+    fetch(`https://www.omdbapi.com/?apikey=9b7cb146&type=movie&plot=full&s=${query}`)
       .then(res => res.json())
       .then(
         (result) => {
