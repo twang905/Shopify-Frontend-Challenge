@@ -43,7 +43,7 @@ export default function MovieCard(props) {
       <div>
         <button 
           className="bg-white text-black rounded-md w-full py-2 hover:bg-black hover:text-white" 
-          onClick={() => { dispatch(addMovie(movie)) }}
+          onClick={() => { dispatch(addMovie(props.movie)) }}
         >Nominate</button>
       </div>
     </div>
