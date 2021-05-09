@@ -2,6 +2,7 @@ import { useSelector } from "react-redux"
 import Nomination from "./Nomination";
 
 export default function Nominations() {
+  // shows all your nominations at bottom of screen
   const nominations = useSelector(state => state.nominations);
   return(
     <div className="w-full pt-3 p-4">
@@ -9,6 +10,7 @@ export default function Nominations() {
         <h1 className="text-3xl m-0 font-bold">My Nominations</h1>
         <h2>Click a movie to remove it</h2>
       </div>
+      // posters of nominated movies
       <div className="h-48 bg-vs-grey-2 rounded-md flex items-center px-2 overflow-scroll">
         {nominations.map(movie => <Nomination movie ={movie}/>)}
       </div>

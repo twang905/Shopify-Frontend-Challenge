@@ -10,10 +10,9 @@ function App() {
   
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
-  const [showBanner, setShowBanner] = useState([]);
-
   const nominations = useSelector(state => state.nominations);
 
+  // refresh inquiries when search query changes
   const handleChange = (e) => {
     setQuery(e.target.value);
     fetch(`https://www.omdbapi.com/?apikey=9b7cb146&type=movie&plot=full&s=${query}`)
@@ -29,15 +28,21 @@ function App() {
         }
       )
   }
+  // refresh search results when inquiry is cleared
+  const handleClear = () => {
+    setQuery("");
+    setMovies([]);
+  }
   
   return (
     <div className="App bg-vs-grey-1 text-white">
       <div className="flex flex-col justify-between m-auto w-full h-screen">
+        {/* show banner when five movies are nominated */}
         {nominations.length === 5 && <Banner />}
         <SearchSection 
           query={query}
           onChange={handleChange}
-          buttonClick={() => {setQuery("")}}
+          buttonClick={handleClear}
         />
         <MoviesSection movies={movies} />
         <Nominations />

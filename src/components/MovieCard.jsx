@@ -7,6 +7,7 @@ export default function MovieCard(props) {
   const dispatch = useDispatch();
   
   useEffect(() => {
+    // using movie title, fetch other information about movie including ratings, director, etc
     fetch(`https://www.omdbapi.com/?apikey=9b7cb146&t=${props.title}`)
       .then(res => res.json())
       .then(
@@ -20,9 +21,8 @@ export default function MovieCard(props) {
   }, [])
 
   return (
-  <div 
-    className="rounded-md flex flex-row bg-vs-grey-2 h-60"
-  >
+  <div  className="rounded-md flex flex-row bg-vs-grey-2 h-60">
+    {/* movie poster */}
     <img 
       src={props.poster}
       alt="new"
@@ -30,16 +30,19 @@ export default function MovieCard(props) {
     />
     <div className="p-4 flex flex-col w-96 justify-between">
       <div>
+        {/* MOVIE title, year and director */}
         <div className="text-left">
-            <h1 className="text-2xl font-bold text-gray-100">{props.title}</h1>
-            <h1 className="text-sm text-gray-400">{`${props.year}, ${movie === null ? "" : movie.Director}`}</h1>
-          </div>
-          <div className="flex flex-row items-center">
+          <h1 className="text-2xl font-bold text-gray-100">{props.title}</h1>
+          <h1 className="text-sm text-gray-400">{`${props.year}, ${movie === null ? "" : movie.Director}`}</h1>
+        </div>
+        {/* movie runtime and rating */}
+        <div className="flex flex-row items-center">
           <h1 className="text-xs my-4 mr-3 rounded-md p-1 border-gray-400 text-gray-100 border-2 w-14">{movie === null ? "-" : movie.Runtime}</h1>
-            <h1 className="text-md text-blue-600 font-bold">{movie === null ? "-" : movie.imdbRating}</h1>
-            <h1 className="text-md text-gray-400">{"\xa0/10"}</h1>
-          </div>
+          <h1 className="text-md text-blue-600 font-bold">{movie === null ? "-" : movie.imdbRating}</h1>
+          <h1 className="text-md text-gray-400">{"\xa0/10"}</h1>
+        </div>
       </div>
+      {/* nominate movie button */}
       <div>
         <button 
           className="bg-white text-black rounded-md w-full py-2 hover:bg-black hover:text-white" 

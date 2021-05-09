@@ -1,3 +1,4 @@
+// reducer for adding and removing movies fro nominated list
 const nominationsReducer = (state = [], action) => {
   switch(action.type) {
     case 'ADDMOVIE':

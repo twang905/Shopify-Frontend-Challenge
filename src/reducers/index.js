@@ -1,6 +1,7 @@
 import {combineReducers, createStore} from 'redux';
 import nominationsReducer from './nominationsReducer';
 
+// allow for data persistance when exiting or refreshing page
 function saveToLocalStorage(state) {
   try {
     const serializedState = JSON.stringify(state)

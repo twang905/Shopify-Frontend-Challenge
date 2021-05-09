@@ -3,6 +3,7 @@ import { removeMovie } from "../actions"
 
 export default function Nomination(props) {
   const dispatch = useDispatch();
+  // clickable movie poster to show nominated movie
   return(
     <button 
       className="px-1"

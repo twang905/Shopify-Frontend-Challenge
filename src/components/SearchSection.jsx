@@ -1,4 +1,5 @@
 export default function SearchSection(props) {
+  // search bar
   return(
     <div className="p-4">
       <div className="flex flex-row h-14 border-white">
@@ -8,6 +9,7 @@ export default function SearchSection(props) {
           onChange={props.onChange}
           value={props.query}
         ></input>
+        {/* clears search inquiry */}
         <button onClick={props.buttonClick}>
           <i className="fas fa-times text-3xl"></i>
         </button>
