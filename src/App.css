@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  font-family: 'Proxima Nova';
 }
 
 .App-logo {
@@ -35,4 +36,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+textarea:focus, input:focus{
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+input {
+  background-color: transparent;
+}
+
+@font-face{
+  font-family: "sf-pro";
+  src: local("SFProDisplay-Bold"), url(./assets/SFProDisplay-Bold.ttf) format('openType');
 }
