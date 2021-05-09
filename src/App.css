@@ -54,3 +54,14 @@ input {
   font-family: "sf-pro";
   src: local("SFProDisplay-Bold"), url(./assets/SFProDisplay-Bold.ttf) format('openType');
 }
+
+@font-face {
+  font-family: Proxima Nova;
+  font-weight: 400;
+  src: url(./assets/proxima-nova-regular.otf) format("openType");
+}
+@font-face {
+  font-family: Proxima Nova;
+  font-weight: 500;
+  src: url(./assets/proxima-nova-bold.otf) format("openType");
+}

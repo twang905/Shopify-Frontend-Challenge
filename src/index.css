@@ -1,16 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer base {
-  @font-face {
-    font-family: Proxima Nova;
-    font-weight: 400;
-    src: url(./assets/proxima-nova-regular.otf) format("otf");
-  }
-  @font-face {
-    font-family: Proxima Nova;
-    font-weight: 500;
-    src: url(./assets/proxima-nova-bold.otf) format("otf");
-  }
-}
