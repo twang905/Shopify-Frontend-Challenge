@@ -1,6 +1,7 @@
 import { useState, useEffect} from "react";
 import { useDispatch } from "react-redux";
 import { addMovie } from "../actions";
+import posterPlaceholder from "../assets/poster-placeholder.png"
 
 export default function MovieCard(props) {
   const [movie, setMovie] = useState(null);
@@ -20,11 +21,17 @@ export default function MovieCard(props) {
       )
   }, [])
 
+  const getSrc = () => {
+    return props.poster !== "N/A"
+    ? props.poster
+    : posterPlaceholder
+  }
+
   return (
   <div  className="rounded-md flex flex-row bg-vs-grey-2 h-60">
     {/* movie poster */}
     <img 
-      src={props.poster}
+      src={getSrc()}
       alt="new"
       className="rounded-l-md h-60"
     />
