@@ -3,11 +3,16 @@ import SearchSection from './components/SearchSection';
 import { useState } from 'react';
 import Nominations from './components/Nominations';
 import MoviesSection from './components/MoviesSection';
+import Banner from './components/Banner';
+import { useSelector } from 'react-redux';
 
 function App() {
   
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+  const [showBanner, setShowBanner] = useState([]);
+
+  const nominations = useSelector(state => state.nominations);
 
   const handleChange = (e) => {
     setQuery(e.target.value);
@@ -28,6 +33,7 @@ function App() {
   return (
     <div className="App bg-vs-grey-1 text-white">
       <div className="flex flex-col justify-between m-auto w-full h-screen">
+        {nominations.length === 5 && <Banner />}
         <SearchSection 
           query={query}
           onChange={handleChange}
