@@ -27,6 +27,30 @@ export default function MovieCard(props) {
     : posterPlaceholder
   }
 
+  const getRating = () => {
+    if (movie === null) {
+      return "-"
+    } else {
+      if (movie.imdbRating === "N/A") {
+        return "-"
+      } else {
+        return movie.imdbRating
+      }
+    }
+  }
+
+  const getDirector = () => {
+    if (movie === null) {
+      return "Unknown"
+    } else {
+      if (movie.Director === "N/A") {
+        return "Unknown"
+      } else {
+        return movie.Director
+      }
+    }
+  }
+
   return (
   <div  className="rounded-md flex flex-row bg-vs-grey-2 h-60">
     {/* movie poster */}
@@ -40,12 +64,12 @@ export default function MovieCard(props) {
         {/* MOVIE title, year and director */}
         <div className="text-left">
           <h1 className="text-2xl font-bold text-gray-100">{props.title}</h1>
-          <h1 className="text-sm text-gray-400">{`${props.year}, ${movie === null ? "" : movie.Director}`}</h1>
+          <h1 className="text-sm text-gray-400">{`${props.year}, ${getDirector()}`}</h1>
         </div>
         {/* movie runtime and rating */}
         <div className="flex flex-row items-center">
           <h1 className="text-xs my-4 mr-3 rounded-md p-1 border-gray-400 text-gray-100 border-2 w-14">{movie === null ? "-" : movie.Runtime}</h1>
-          <h1 className="text-md text-blue-600 font-bold">{movie === null ? "-" : movie.imdbRating}</h1>
+          <h1 className="text-md text-blue-600 font-bold">{getRating()}</h1>
           <h1 className="text-md text-gray-400">{"\xa0/10"}</h1>
         </div>
       </div>
