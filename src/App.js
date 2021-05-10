@@ -13,9 +13,10 @@ function App() {
   const nominations = useSelector(state => state.nominations);
 
   // refresh inquiries when search query changes
-  const handleChange = (e) => {
-    setQuery(e.target.value);
-    fetch(`https://www.omdbapi.com/?apikey=9b7cb146&type=movie&plot=full&s=${query}`)
+  const handleChange = async (event) => {
+    const newQuery = event.target.value;
+    setQuery(newQuery);
+    await fetch(`https://www.omdbapi.com/?apikey=9b7cb146&type=movie&plot=full&s=${newQuery}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -23,9 +24,7 @@ function App() {
             setMovies(result.Search)
           }
         },
-        (error) => {
-          console.log(error)
-        }
+        (error) => { console.log(error) }
       )
   }
   // refresh search results when inquiry is cleared
