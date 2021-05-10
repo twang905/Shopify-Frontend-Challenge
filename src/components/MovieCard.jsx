@@ -60,7 +60,7 @@ export default function MovieCard(props) {
       className="rounded-l-md h-60"
     />
     <div className="p-4 flex flex-col w-96 justify-between">
-      <div>
+      <div className="h-40 overflow-hidden overflow-scroll">
         {/* MOVIE title, year and director */}
         <div className="text-left">
           <h1 className="text-2xl font-bold text-gray-100">{props.title}</h1>
